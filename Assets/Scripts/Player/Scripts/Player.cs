@@ -116,6 +116,8 @@ public class Player : MonoBehaviour
         Gizmos.DrawRay(Core.CollisionSenses.WallCheck.position, Vector2.right * Core.Movement.FacingDirection * Core.CollisionSenses.WallCheckDistance);
         Gizmos.DrawRay(Core.CollisionSenses.LedgeCheck.position, Vector2.right * Core.Movement.FacingDirection * Core.CollisionSenses.WallCheckDistance);
 
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireCube(Core.CollisionSenses.CellingCheck.position, Core.CollisionSenses.OverlapSize);
     }
 
     #endregion

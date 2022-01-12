@@ -9,9 +9,11 @@ public class PlayerDashState : PlayerAblilityState
     private bool _dashInput;
     private bool _dashInputStop;
     private bool _isHolding;
-
+    private bool _hasTouchedWater;
     private Vector2 _dashDirection;
     private Vector2 _dashDirectionInput;
+
+    private int _inputX;
 
     private float _lastDashTime;
     public PlayerDashState(Player p_player, PlayerStateMachine p_stateMachine, PlayerData p_playerData, string p_animboolName) : base(p_player, p_stateMachine, p_playerData, p_animboolName)
@@ -21,6 +23,7 @@ public class PlayerDashState : PlayerAblilityState
     {
         base.EnterState();
         CanDash = false;
+        _hasTouchedWater = false;
         player.InputHandler.SetDashInputToFalse();
 
 
@@ -59,40 +62,30 @@ public class PlayerDashState : PlayerAblilityState
         {
             core.Movement.SetVelocityY(core.Movement.CurrentVelocity.y * playerData.DashEndYMultiplier);
         }
+
+
+        if (_hasTouchedWater)
+        {
+            CanDash = true;
+        }
+
     }
 
     public override void StandardUpdate()
     {
         base.StandardUpdate();
 
+        _inputX = player.InputHandler.NormalizeInputX;
         _dashInput = player.InputHandler.DashInput;
         _dashInputStop = player.InputHandler.DashInputStop;
 
         player.Animator.SetFloat("YVelocity", core.Movement.CurrentVelocity.y);
         player.Animator.SetFloat("XVelocity",Mathf.Abs(core.Movement.CurrentVelocity.x));
-        Debug.Log("Speed" + playerData.DashVelocity);
-        Debug.Log(_dashDirection);
-        Debug.Log("RB "+ player.Rigidbody.velocity);
-        /*
-                if (!isExistingState)
-                {
 
-                    if(!(Time.time >= startTime + playerData.DashTime))
-                    {
-                        player.Rigidbody.drag = playerData.Drag;
-                        core.Movement.SetVelocity(playerData.DashVelocity, _dashDirection);
+        FollowAlongWallDash();
+        WaterDash();
 
-                    }
-                    else
-                    {
-                        player.Rigidbody.drag = playerData.PlayerDrag;
-                        isAbilityDone = true;
-                        _lastDashTime = Time.time;
-
-                    }
-                }*/
-
-        if (Time.time >= startTime + playerData.DashTime)
+        if (Time.time >= startTime + playerData.DashTime && !core.CollisionSenses.WallFront || (_hasTouchedWater && !core.CollisionSenses.IsTouchingWater))
         {
             player.Rigidbody.drag = playerData.PlayerDrag;
             _lastDashTime = Time.time;
@@ -102,11 +95,50 @@ public class PlayerDashState : PlayerAblilityState
 
     public bool CheckIfCanDash()
     {
-        return CanDash && Time.time >= _lastDashTime + playerData.DashCooldown;
+        if (!_hasTouchedWater)
+        {
+            return (CanDash && Time.time >= _lastDashTime + playerData.DashCooldown);
+        }
+        else
+        {
+            return true;
+        }
     }
 
-    public void ResetCanDash() => CanDash = true;
+    public void ResetCanDash()
+    {
+        CanDash = true;
+    }
 
+    private void FollowAlongWallDash()
+    {
+        //////////////////////////
+        /// Follow platform //////
+        /// If WallDetected //////
+        //////////////////////////
+
+        if (core.CollisionSenses.WallFront)
+        {
+            Vector2 newDirection = Vector2.up - core.CollisionSenses.RaycastNormalValue * Vector2.Dot(Vector2.up, core.CollisionSenses.RaycastNormalValue.normalized);
+            core.Movement.SetVelocity(playerData.DashVelocity, newDirection);
+            Debug.Log("Start Advanced Dash " + newDirection);
+
+            if (Time.time >= startTime + playerData.DashTime)
+            {
+                player.Rigidbody.drag = playerData.PlayerDrag;
+                _lastDashTime = Time.time;
+                isAbilityDone = true;
+            }
+        }
+    }
+    private void WaterDash()
+    {
+        if (core.CollisionSenses.IsTouchingWater)
+        {
+            core.Movement.SetVelocity(playerData.DashVelocity, _dashDirection);
+            _hasTouchedWater = true;
+        }
+    }
     private void StartLongDashMode()
     {
         ////////////
