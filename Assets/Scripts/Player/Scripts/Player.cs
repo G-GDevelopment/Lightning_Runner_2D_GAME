@@ -19,6 +19,11 @@ public class Player : MonoBehaviour
     public PlayerDashState DashState { get; private set; }
     public PlayerCrouchIdleState CrouchIdleState { get; private set; }
     public PlayerCrouchMoveState CrouchMoveState { get; private set; }
+    public PlayerGodAbilityState GodAbilityState { get; private set; }
+    public PlayerShootState ShootState { get; private set; }
+    public PlayerPullState PullState { get; private set; }
+    public PlayerHyperDashState HyperDashState { get; private set; }
+    public PlayerShieldDashState ShieldDashState { get; private set; }
 
     [SerializeField]
     private PlayerData _playerData;
@@ -36,6 +41,7 @@ public class Player : MonoBehaviour
     #region Variables
     private Vector2 _playerVelocity;
 
+    [SerializeField] private bool _debugGizmos = false;
     #endregion
 
     #region Built In Method
@@ -58,6 +64,11 @@ public class Player : MonoBehaviour
         DashState = new PlayerDashState(this, StateMachine, _playerData, "Dash");
         CrouchIdleState = new PlayerCrouchIdleState(this, StateMachine, _playerData, "CrouchIdle");
         CrouchMoveState = new PlayerCrouchMoveState(this, StateMachine, _playerData, "CrouchMove");
+        GodAbilityState = new PlayerGodAbilityState(this, StateMachine, _playerData, "GodMode");
+        ShootState = new PlayerShootState(this, StateMachine, _playerData, "Shoot");
+        PullState = new PlayerPullState(this, StateMachine, _playerData, "Pull");
+        HyperDashState = new PlayerHyperDashState(this, StateMachine, _playerData, "HyperDash");
+        ShieldDashState = new PlayerShieldDashState(this, StateMachine, _playerData, "ShieldDash");
 
     }
 
@@ -107,17 +118,21 @@ public class Player : MonoBehaviour
     #region DrawGizmos
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(Core.CollisionSenses.GroundCheck.position, Core.CollisionSenses.GroundCheckRadius);
-        Gizmos.DrawWireSphere(Core.CollisionSenses.CellingCheck.position, Core.CollisionSenses.CellingCheckRadius);
+        if (_debugGizmos)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(Core.CollisionSenses.GroundCheck.position, Core.CollisionSenses.GroundCheckRadius);
+            Gizmos.DrawWireSphere(Core.CollisionSenses.CellingCheck.position, Core.CollisionSenses.CellingCheckRadius);
 
 
 
-        Gizmos.DrawRay(Core.CollisionSenses.WallCheck.position, Vector2.right * Core.Movement.FacingDirection * Core.CollisionSenses.WallCheckDistance);
-        Gizmos.DrawRay(Core.CollisionSenses.LedgeCheck.position, Vector2.right * Core.Movement.FacingDirection * Core.CollisionSenses.WallCheckDistance);
+            Gizmos.DrawRay(Core.CollisionSenses.WallCheck.position, Vector2.right * Core.Movement.FacingDirection * Core.CollisionSenses.WallCheckDistance);
+            Gizmos.DrawRay(Core.CollisionSenses.LedgeCheck.position, Vector2.right * Core.Movement.FacingDirection * Core.CollisionSenses.WallCheckDistance);
 
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawWireCube(Core.CollisionSenses.CellingCheck.position, Core.CollisionSenses.OverlapSize);
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawWireCube(Core.CollisionSenses.CellingCheck.position, Core.CollisionSenses.OverlapSize);
+
+        }
     }
 
     #endregion

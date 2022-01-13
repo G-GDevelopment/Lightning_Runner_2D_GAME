@@ -13,6 +13,9 @@ public class PlayerInAirState : PlayerState
 
     private bool _dashInput;
 
+    private bool _changeAbilityInput;
+    private bool _abilityInput;
+
     //Checks
     private bool _isGrounded;
 
@@ -91,9 +94,21 @@ public class PlayerInAirState : PlayerState
         _jumpInputStop = player.InputHandler.JumpInputStop;
         _grabInput = player.InputHandler.GrabInput;
         _dashInput = player.InputHandler.DashInput;
+        _changeAbilityInput = player.InputHandler.AbilityChangeInput;
+        _abilityInput = player.InputHandler.AbilityInput;
 
         _inputX = player.InputHandler.NormalizeInputX;
-        if (_isGrounded && core.Movement.CurrentVelocity.y < 0.01f)
+
+        if (player.InputHandler.AbilityInput &&  core.Ability.HasObtainedPullShoot)
+        {
+            stateMachine.ChangeState(player.GodAbilityState);
+        }
+        else if (player.InputHandler.AbilityChangeInput && core.Ability.HasObtainedPullShoot)
+        {
+            player.GodAbilityState.ChangeAbility();
+            Debug.Log(player.GodAbilityState.CurrentAbility);
+        }
+        else if (_isGrounded && core.Movement.CurrentVelocity.y < 0.01f)
         {
             stateMachine.ChangeState(player.LandState);
         }

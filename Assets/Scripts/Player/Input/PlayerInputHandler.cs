@@ -17,6 +17,8 @@ public class PlayerInputHandler : MonoBehaviour
     public bool DashInput { get; private set; }
     public bool DashInputStop { get; private set; }
 
+    public bool AbilityInput { get; private set; }
+    public bool AbilityChangeInput { get; private set; }
 
 
     [SerializeField]
@@ -30,29 +32,38 @@ public class PlayerInputHandler : MonoBehaviour
         CheckJumpInputHoldTime();
         ChechDashInputHoldTime();
     }
+
+    public void OnAbilityInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            AbilityInput = true;
+        }
+
+        if (context.canceled)
+        {
+            AbilityInput = false;
+        }
+    }
+    public void OnChangeAbilityInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            AbilityChangeInput = true;
+        }
+
+        if (context.canceled)
+        {
+            AbilityChangeInput = false;
+        }
+    }
     public void OnMoveInput(InputAction.CallbackContext context)
     {
         RawMovementInput = context.ReadValue<Vector2>();
 
-        if(Mathf.Abs(RawMovementInput.x) > 0.5f)
-        {
-            NormalizeInputX = (int) (RawMovementInput * Vector2.right).normalized.x;
+        NormalizeInputX = Mathf.RoundToInt(RawMovementInput.x);
+        NormalizeInputY = Mathf.RoundToInt(RawMovementInput.y);
 
-        }
-        else
-        {
-            NormalizeInputX = 0;
-        }
-
-        if (Mathf.Abs(RawMovementInput.y) > 0.5f)
-        {
-            NormalizeInputY = (int)(RawMovementInput * Vector2.up).normalized.y;
-
-        }
-        else
-        {
-            NormalizeInputY = 0;
-        }
     }
 
     public void OnJumpInput(InputAction.CallbackContext context)
@@ -103,7 +114,8 @@ public class PlayerInputHandler : MonoBehaviour
         DashDirectionInput = Vector2Int.RoundToInt(RawDashDirectionInput.normalized);
 
     }
-
+    public void SetChangeAbilityInputToFalse() => AbilityChangeInput = false;
+    public void SetAbilityInputToFalse() => AbilityInput = false;
     public void SetJumpInputToFalse() => JumpInput = false;
     public void SetDashInputToFalse() => DashInput = false;
     private void CheckJumpInputHoldTime()

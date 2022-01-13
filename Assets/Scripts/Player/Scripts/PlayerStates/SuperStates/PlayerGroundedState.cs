@@ -14,6 +14,8 @@ public class PlayerGroundedState : PlayerState
     private bool _isTouchingWall;
     private bool _isTouchingLedge;
     private bool _dashInput;
+    private bool _changeAbilityInput;
+    private bool _abilityInput;
 
     public PlayerGroundedState(Player p_player, PlayerStateMachine p_stateMachine, PlayerData p_playerData, string p_animboolName) : base(p_player, p_stateMachine, p_playerData, p_animboolName)
     {
@@ -56,9 +58,18 @@ public class PlayerGroundedState : PlayerState
         _jumpInput = player.InputHandler.JumpInput;
         _grabInput = player.InputHandler.GrabInput;
         _dashInput = player.InputHandler.DashInput;
+        _changeAbilityInput = player.InputHandler.AbilityChangeInput;
+        _abilityInput = player.InputHandler.AbilityInput;
 
-
-        if (_jumpInput && player.JumpState.CanJump() && !isTouchingCelling)
+        if (player.InputHandler.AbilityInput && !isTouchingCelling && core.Ability.HasObtainedPullShoot)
+        {
+            stateMachine.ChangeState(player.GodAbilityState);
+        }else if (player.InputHandler.AbilityChangeInput && !isTouchingCelling && core.Ability.HasObtainedPullShoot)
+        {
+            player.GodAbilityState.ChangeAbility();
+            Debug.Log(player.GodAbilityState.CurrentAbility);
+        }
+        else if (_jumpInput && player.JumpState.CanJump() && !isTouchingCelling)
         {
 
             stateMachine.ChangeState(player.JumpState);
