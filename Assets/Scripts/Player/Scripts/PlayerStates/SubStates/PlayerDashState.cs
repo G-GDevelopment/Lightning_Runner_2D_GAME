@@ -85,7 +85,7 @@ public class PlayerDashState : PlayerAblilityState
         FollowAlongWallDash();
         WaterDash();
 
-        if (Time.time >= startTime + playerData.DashTime && !core.CollisionSenses.WallFront || (_hasTouchedWater && !core.CollisionSenses.IsTouchingWater))
+        if (Time.time >= startTime + playerData.DashTime && !core.CollisionSenses.WallFront && !_hasTouchedWater || (_hasTouchedWater && !core.CollisionSenses.IsTouchingWater))
         {
             player.Rigidbody.drag = playerData.PlayerDrag;
             _lastDashTime = Time.time;

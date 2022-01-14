@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerShootState : PlayerAblilityState
 {
+    private int _inputX;
+    private bool _playerGrounded;
     public PlayerShootState(Player p_player, PlayerStateMachine p_stateMachine, PlayerData p_playerData, string p_animboolName) : base(p_player, p_stateMachine, p_playerData, p_animboolName)
     {
     }
@@ -11,18 +13,22 @@ public class PlayerShootState : PlayerAblilityState
     public override void AnimationFinishedTrigger()
     {
         base.AnimationFinishedTrigger();
+
+        isAbilityDone = true;
     }
 
     public override void AnimationTrigger()
     {
         base.AnimationTrigger();
+
+        core.Ability.Shoot();
+
     }
 
     public override void EnterState()
     {
         base.EnterState();
 
-        Shoot();
     }
 
     public override void ExitState()
@@ -30,8 +36,16 @@ public class PlayerShootState : PlayerAblilityState
         base.ExitState();
     }
 
-    private void Shoot()
+    public override void StandardUpdate()
     {
+        base.StandardUpdate();
 
+        _inputX = player.InputHandler.NormalizeInputX;
+        _playerGrounded = core.CollisionSenses.IsGrounded;
+
+
+        core.Movement.ShouldFlip(_inputX);
     }
+
+
 }

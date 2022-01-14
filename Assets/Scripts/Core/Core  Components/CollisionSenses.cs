@@ -33,7 +33,10 @@ public class CollisionSenses : CoreComponents
 
 
     #endregion
-
+    public void LogicUpdate()
+    {
+        core.Anim.SetBool("IsGrounded", IsGrounded);
+    }
 
 
     #region Methods Checking player condition

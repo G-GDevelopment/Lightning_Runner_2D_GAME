@@ -203,526 +203,400 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 0, 0
+      name: AirFront_Attack_B_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 512
+        y: 492
         width: 128
         height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 17dd0c827f8858d70800000000000000
-      internalID: 9044786021765537137
+      spriteID: 54d3c25512c802e448146d0ad5631021
+      internalID: -507668087
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1, 0
+      name: AirFront_Attack_B_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 492
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f66b964d9ed3cbb4ab29d64878d8704a
+      internalID: 932885279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirFront_Attack_B_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 492
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce779571584abf949bc8e644cc8267f7
+      internalID: 488944288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirFront_Attack_B_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 492
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d6c72af5dbbad7489e0e05f70b64e75
+      internalID: 1980932847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirFront_Attack_B_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 492
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78c7d31ef0056414aa5e3ddcf6e11eb7
+      internalID: -194627207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirFront_Attack_B_5
       rect:
         serializedVersion: 2
         x: 0
-        y: 384
+        y: 364
         width: 128
         height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9c2b8e49d7492e0f0800000000000000
-      internalID: -1089144892780137783
+      spriteID: 0c1c5c8e47383704aa0bdd69fd1734c1
+      internalID: 1961313769
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 2, 0
+      name: AirFront_Attack_B_6
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 364
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a29fef97a82807e40a07b1a003ced298
+      internalID: 509143608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirFront_Attack_B_7
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 364
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 862911a9c4bbcd046b81375da88c2ed3
+      internalID: -925493488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirFront_Attack_B_8
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 364
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 775455813cc49bb4a9a7c6721587a993
+      internalID: -1528829989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirFront_Attack_B_9
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 364
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23454882201fd674f9710a993e1e489e
+      internalID: 1602254952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirFront_Attack_B_10
       rect:
         serializedVersion: 2
         x: 0
-        y: 256
+        y: 236
         width: 128
         height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: be501e31ff3967dd0800000000000000
-      internalID: -2488639020316162581
+      spriteID: 590c84f1e08322b498bc2bd807e6a801
+      internalID: -1524942686
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 3, 0
+      name: AirFront_Attack_B_11
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 236
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 613ad0eea2538714c9e444ec79d5633b
+      internalID: 1639562575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirFront_Attack_B_12
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 236
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57f2e50e00f8c624c82611315b947bc8
+      internalID: 2122228680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirFront_Attack_B_13
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 236
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8cd84779fa34194897e95d01f8c578b
+      internalID: 167027423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirFront_Attack_B_14
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 236
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1682603e7d468144e819b8c860c8d4e6
+      internalID: -1461853750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AirFront_Attack_B_15
       rect:
         serializedVersion: 2
         x: 0
-        y: 128
+        y: 108
         width: 128
         height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f98134026eb87ebf0800000000000000
-      internalID: -295113430069471073
+      spriteID: 75f7a5651e6a6c84d8b3bd539fb6430d
+      internalID: -705824838
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 4, 0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ff536b84bd4314a50800000000000000
-      internalID: 6503537453322089983
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 0, 1
+      name: AirFront_Attack_B_16
       rect:
         serializedVersion: 2
         x: 128
-        y: 512
+        y: 108
         width: 128
         height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 24d2274ff8d4d9230800000000000000
-      internalID: 3647156553916755266
+      spriteID: c479c2a0b3f081f46b740b648b30cfbe
+      internalID: -128511215
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1, 1
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 384
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c6b2c5eaf3a0c46f0800000000000000
-      internalID: -699172573524776084
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 2, 1
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 256
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f057bb9890acfebd0800000000000000
-      internalID: -2598636317655206641
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3, 1
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 128
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f0bb94cfd640a7e60800000000000000
-      internalID: 7960680161761409807
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 4, 1
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 04b362ae854b42d00800000000000000
-      internalID: 947080115633142592
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 0, 2
+      name: AirFront_Attack_B_17
       rect:
         serializedVersion: 2
         x: 256
-        y: 512
+        y: 108
         width: 128
         height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c5b6ef9b0cb7f7e90800000000000000
-      internalID: -7025760825990288548
+      spriteID: 544735dab9768844c867190a80bfe85d
+      internalID: -771364146
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 1, 2
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 384
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 35114453ece02dd40800000000000000
-      internalID: 5607560764849394003
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 2, 2
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 256
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eb0ea992d04d782e0800000000000000
-      internalID: -2123495546284220226
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3, 2
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 128
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d95d1a79bcc461430800000000000000
-      internalID: 3753271776765924765
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 4, 2
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2c0794b54668fd090800000000000000
-      internalID: -8007533846855061310
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 0, 3
+      name: AirFront_Attack_B_18
       rect:
         serializedVersion: 2
         x: 384
-        y: 512
+        y: 108
         width: 128
         height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b08ce1fb38fbefd00800000000000000
-      internalID: 1008453939145656331
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1, 3
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 384
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e3003b709df2d01b0800000000000000
-      internalID: -5688838145115488194
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 2, 3
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 256
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 302752a9d074861f0800000000000000
-      internalID: -1051512389244718589
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3, 3
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 128
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 18f2fb6560d2189b0800000000000000
-      internalID: -5079729399448785023
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 4, 3
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7078d9089114d8e40800000000000000
-      internalID: 5660251884462376711
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 0, 4
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 512
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 597503fcfc3d19f00800000000000000
-      internalID: 1121910671679707029
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 1, 4
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 384
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a1bc5f2544f28eba0800000000000000
-      internalID: -6059541328130880742
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 2, 4
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 256
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f05a64e5fcf3af430800000000000000
-      internalID: 3817433794022384911
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 3, 4
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 128
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e3cb2115070649240800000000000000
-      internalID: 4797565538569206846
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 4, 4
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 128
-        height: 128
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 28d1f7227287cd4d0800000000000000
-      internalID: -3108477533314671230
+      spriteID: 9fa9cf915b61ab446b409ed65469a178
+      internalID: 2081516523
       vertices: []
       indices: 
       edges: []
@@ -738,31 +612,25 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      4, 4: -3108477533314671230
-      0, 2: -7025760825990288548
-      2, 0: -2488639020316162581
-      0, 0: 9044786021765537137
-      3, 0: -295113430069471073
-      1, 3: -5688838145115488194
-      4, 3: 5660251884462376711
-      1, 4: -6059541328130880742
-      1, 1: -699172573524776084
-      4, 1: 947080115633142592
-      0, 3: 1008453939145656331
-      3, 4: 4797565538569206846
-      1, 2: 5607560764849394003
-      0, 1: 3647156553916755266
-      3, 3: -5079729399448785023
-      4, 0: 6503537453322089983
-      2, 1: -2598636317655206641
-      3, 1: 7960680161761409807
-      3, 2: 3753271776765924765
-      2, 2: -2123495546284220226
-      2, 4: 3817433794022384911
-      0, 4: 1121910671679707029
-      4, 2: -8007533846855061310
-      1, 0: -1089144892780137783
-      2, 3: -1051512389244718589
+      AirFront_Attack_B_0: -507668087
+      AirFront_Attack_B_10: -1524942686
+      AirFront_Attack_B_17: -771364146
+      AirFront_Attack_B_4: -194627207
+      AirFront_Attack_B_9: 1602254952
+      AirFront_Attack_B_2: 488944288
+      AirFront_Attack_B_15: -705824838
+      AirFront_Attack_B_11: 1639562575
+      AirFront_Attack_B_18: 2081516523
+      AirFront_Attack_B_3: 1980932847
+      AirFront_Attack_B_13: 167027423
+      AirFront_Attack_B_16: -128511215
+      AirFront_Attack_B_14: -1461853750
+      AirFront_Attack_B_6: 509143608
+      AirFront_Attack_B_12: 2122228680
+      AirFront_Attack_B_8: -1528829989
+      AirFront_Attack_B_5: 1961313769
+      AirFront_Attack_B_1: 932885279
+      AirFront_Attack_B_7: -925493488
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
