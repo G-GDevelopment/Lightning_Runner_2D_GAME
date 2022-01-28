@@ -99,6 +99,8 @@ public class PlayerInAirState : PlayerState
 
         _inputX = player.InputHandler.NormalizeInputX;
 
+        core.Ability.UpdateText(player.GodAbilityState.CurrentAbility); // Prototyping
+
         if (player.InputHandler.AbilityInput &&  core.Ability.HasObtainedPullShoot)
         {
             stateMachine.ChangeState(player.GodAbilityState);

@@ -10,11 +10,14 @@ public class CollisionSenses : CoreComponents
     public Transform LedgeCheck { get => _ledgeChecker; private set => _ledgeChecker = value; }
     public Transform CellingCheck { get => _cellingChecker; private set => _cellingChecker = value; }
     public Vector2 OverlapSize { get => _overlapSize; set => _overlapSize = value; }
+    public Vector2 CheckingEnemySize { get => _checkingEnemySize; set => _checkingEnemySize = value; }
+    public Vector2 BoxOffset { get => _boxOffset; set => _boxOffset = value; }
 
     public float GroundCheckRadius { get => _groundCheckRadius; set => _groundCheckRadius = value; }
     public float CellingCheckRadius { get => _cellingCheckRadius; set => _cellingCheckRadius = value; }
     public float WallCheckDistance { get => _wallCheckDistance; set => _wallCheckDistance = value; }
     public LayerMask GroundLayer { get => _groundLayer; set => _groundLayer = value; }
+    public LayerMask GodRemnantLayer { get => _godRemnantLayer; set => _godRemnantLayer = value; }
 
     [SerializeField] private Transform _groundChecker;
     [SerializeField] private Transform _wallChecker;
@@ -25,11 +28,14 @@ public class CollisionSenses : CoreComponents
     [SerializeField] private float _cellingCheckRadius;
     [SerializeField] private float _wallCheckDistance;
 
-
+    [SerializeField] private Vector2 _boxOffset;
+    [SerializeField] private Vector2 _checkingEnemySize;
     [SerializeField] private Vector2 _overlapSize;
 
     [SerializeField] private LayerMask _groundLayer;
     [SerializeField] private LayerMask _waterLayer;
+    [SerializeField] private LayerMask _godRemnantLayer;
+
 
 
     #endregion
@@ -69,6 +75,12 @@ public class CollisionSenses : CoreComponents
     {
         get => Physics2D.OverlapBox(_cellingChecker.position, _overlapSize, 0f, _waterLayer);
     }
+    public bool IsTouchingGodRemnants
+    {
+        get => Physics2D.OverlapBox(_cellingChecker.position + (Vector3)_boxOffset, _checkingEnemySize, 0f, _godRemnantLayer);
+    }
+
+
 
     public Vector2 RaycastNormalValue
     {

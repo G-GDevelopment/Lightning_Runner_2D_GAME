@@ -17,31 +17,38 @@ public class PlayerGodAbilityState : PlayerAblilityState
     {
         base.EnterState();
 
-        Debug.Log(CurrentAbility);
+        player.InputHandler.SetAbilityInputToFalse();
 
+        if (!isExistingState)
+        {
+            if (!core.Ability.HasGodRemnant && CurrentAbility != 0)
+            {
+                isAbilityDone = true;
+            }
+            else if(CurrentAbility == 0)
+            {
+                if (core.Ability.HasGodRemnant)
+                {
+                    stateMachine.ChangeState(player.ShootState);
+                    isAbilityDone = true;
+                }
+                else
+                {
+                    stateMachine.ChangeState(player.PullState);
+                    isAbilityDone = true;
+                }
+            }
+            else if(CurrentAbility == 1 && core.Ability.HasGodRemnant)
+            {
+                stateMachine.ChangeState(player.HyperDashState);
+                isAbilityDone = true;
+            }
+            else if(CurrentAbility == 2 && core.Ability.HasGodRemnant)
+            {
+                stateMachine.ChangeState(player.ShieldDashState);
+                isAbilityDone = true;
+            }
 
-        if (!core.Ability.HasGodRemnant && CurrentAbility != 0)
-        {
-            isAbilityDone = true;
-        }
-        else if(CurrentAbility == 0)
-        {
-            if (core.Ability.HasGodRemnant)
-            {
-                stateMachine.ChangeState(player.ShootState);
-            }
-            else
-            {
-                stateMachine.ChangeState(player.PullState);
-            }
-        }
-        else if(CurrentAbility == 1 && core.Ability.HasGodRemnant)
-        {
-            stateMachine.ChangeState(player.HyperDashState);
-        }
-        else if(CurrentAbility == 2 && core.Ability.HasGodRemnant)
-        {
-            stateMachine.ChangeState(player.ShieldDashState);
         }
 
     }

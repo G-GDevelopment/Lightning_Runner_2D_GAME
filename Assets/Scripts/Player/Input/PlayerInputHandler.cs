@@ -18,6 +18,7 @@ public class PlayerInputHandler : MonoBehaviour
     public bool DashInputStop { get; private set; }
 
     public bool AbilityInput { get; private set; }
+    public bool AbilityInputStop { get; private set; }
     public bool AbilityChangeInput { get; private set; }
 
 
@@ -38,11 +39,12 @@ public class PlayerInputHandler : MonoBehaviour
         if (context.started)
         {
             AbilityInput = true;
+            AbilityInputStop = false;
         }
 
         if (context.canceled)
         {
-            AbilityInput = false;
+            AbilityInputStop = true;
         }
     }
     public void OnChangeAbilityInput(InputAction.CallbackContext context)

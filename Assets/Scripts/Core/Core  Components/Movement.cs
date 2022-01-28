@@ -9,6 +9,7 @@ public class Movement : CoreComponents
     public Vector2 CurrentVelocity { get; private set; }
 
     private Vector2 _playerVelocity;
+    [SerializeField] private SpriteRenderer _playerSprite;
 
     #region Built In Methods
 
@@ -88,9 +89,11 @@ public class Movement : CoreComponents
     private void Flip()
     {
         FacingDirection *= -1;
+
         Rigidbody.transform.Rotate(0.0f, 180.0f, 0.0f);
 
     }
+
 
     #endregion
 }

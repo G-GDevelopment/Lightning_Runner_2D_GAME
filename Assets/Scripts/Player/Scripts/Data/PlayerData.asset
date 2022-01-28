@@ -41,3 +41,6 @@ MonoBehaviour:
   Drag: 10
   DashEndYMultiplier: 0.2
   DistanceBetweenAfterImages: 0.5
+  HyperDashTime: 1
+  ShieldDashTime: 0.5
+  ShieldDashVelocity: 30

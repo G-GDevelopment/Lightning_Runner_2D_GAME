@@ -26,7 +26,6 @@ public class PlayerDashState : PlayerAblilityState
         _hasTouchedWater = false;
         player.InputHandler.SetDashInputToFalse();
 
-
         _dashDirectionInput = player.InputHandler.DashDirectionInput;
 
         if (_dashDirectionInput != Vector2.zero)
@@ -45,6 +44,10 @@ public class PlayerDashState : PlayerAblilityState
 
 
         core.Movement.SetVelocity(playerData.DashVelocity, _dashDirection);
+
+        core.Ability.StartDashParticles();
+
+        core.Ability.ShowAfterImage(_inputX, player.transform.position);
 
         /*
         _isHolding = true;   //Remove This later and save for LongDash State
@@ -79,9 +82,10 @@ public class PlayerDashState : PlayerAblilityState
         _dashInput = player.InputHandler.DashInput;
         _dashInputStop = player.InputHandler.DashInputStop;
 
-        player.Animator.SetFloat("YVelocity", core.Movement.CurrentVelocity.y);
-        player.Animator.SetFloat("XVelocity",Mathf.Abs(core.Movement.CurrentVelocity.x));
+        Debug.Log(_dashDirectionInput.y);
+        player.Animator.SetFloat("YVelocity", _dashDirectionInput.y);
 
+        player.Rigidbody.drag = playerData.Drag;
         FollowAlongWallDash();
         WaterDash();
 
@@ -105,10 +109,8 @@ public class PlayerDashState : PlayerAblilityState
         }
     }
 
-    public void ResetCanDash()
-    {
-        CanDash = true;
-    }
+    public void ResetCanDash() => CanDash = true;
+    public void UseCanDash() => CanDash = false;
 
     private void FollowAlongWallDash()
     {

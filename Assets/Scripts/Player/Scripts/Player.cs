@@ -80,6 +80,8 @@ public class Player : MonoBehaviour
         CapsuleCollider = GetComponent<CapsuleCollider2D>();
         StateMachine.Initialize(IdleState);
 
+        Core.StartMethod();
+
     }
 
     private void Update()
@@ -131,6 +133,7 @@ public class Player : MonoBehaviour
 
             Gizmos.color = Color.cyan;
             Gizmos.DrawWireCube(Core.CollisionSenses.CellingCheck.position, Core.CollisionSenses.OverlapSize);
+            Gizmos.DrawWireCube(Core.CollisionSenses.CellingCheck.position + (Vector3) Core.CollisionSenses.BoxOffset, Core.CollisionSenses.CheckingEnemySize);
 
         }
     }

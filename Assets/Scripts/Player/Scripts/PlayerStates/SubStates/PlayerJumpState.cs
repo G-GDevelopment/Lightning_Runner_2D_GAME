@@ -19,6 +19,8 @@ public class PlayerJumpState : PlayerAblilityState
         isAbilityDone = true;
         _amountOfJumpsLeft--;
         player.InAirState.SetIsJumping();
+
+        core.Ability.StartJumpParticleSystem();
     }
 
     public bool CanJump()

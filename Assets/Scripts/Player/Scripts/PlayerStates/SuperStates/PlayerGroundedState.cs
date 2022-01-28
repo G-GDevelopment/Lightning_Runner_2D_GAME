@@ -61,6 +61,8 @@ public class PlayerGroundedState : PlayerState
         _changeAbilityInput = player.InputHandler.AbilityChangeInput;
         _abilityInput = player.InputHandler.AbilityInput;
 
+        core.Ability.UpdateText(player.GodAbilityState.CurrentAbility); // Prototyping
+
         if (player.InputHandler.AbilityInput && !isTouchingCelling && core.Ability.HasObtainedPullShoot)
         {
             stateMachine.ChangeState(player.GodAbilityState);

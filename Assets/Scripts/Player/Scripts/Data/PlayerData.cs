@@ -52,5 +52,8 @@ public class PlayerData : ScriptableObject
     public float DashEndYMultiplier = 0.2f;
     public float DistanceBetweenAfterImages = 0.5f;
 
-
+    [Header("Ability Parameter")]
+    public float HyperDashTime = 0.2f;
+    public float ShieldDashTime = 0.5f;
+    public float ShieldDashVelocity = 30f;
 }

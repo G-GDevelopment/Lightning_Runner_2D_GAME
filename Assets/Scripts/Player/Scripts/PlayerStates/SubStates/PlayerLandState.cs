@@ -8,6 +8,13 @@ public class PlayerLandState : PlayerGroundedState
     {
     }
 
+    public override void EnterState()
+    {
+        base.EnterState();
+
+        core.Ability.StartJumpParticleSystem();
+    }
+
     public override void StandardUpdate()
     {
         base.StandardUpdate();

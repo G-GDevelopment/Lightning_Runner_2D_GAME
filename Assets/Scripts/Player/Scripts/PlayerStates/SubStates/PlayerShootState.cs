@@ -20,21 +20,14 @@ public class PlayerShootState : PlayerAblilityState
     public override void AnimationTrigger()
     {
         base.AnimationTrigger();
+        if (!isExistingState)
+        {
+            core.Ability.Shoot();
 
-        core.Ability.Shoot();
-
-    }
-
-    public override void EnterState()
-    {
-        base.EnterState();
+        }
 
     }
 
-    public override void ExitState()
-    {
-        base.ExitState();
-    }
 
     public override void StandardUpdate()
     {

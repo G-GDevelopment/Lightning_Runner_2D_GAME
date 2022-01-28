@@ -26,6 +26,10 @@ public class Core : MonoBehaviour
         }
     }
 
+    public void StartMethod()
+    {
+        Ability.Start();
+    }
     public void LogicUpdate()
     {
         Movement.LogicUpdate();

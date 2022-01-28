@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Graphs_AbilityStancePlayer
+  m_Shader: {fileID: -6465566751694194690, guid: 0de42dff0f705d945a2cbcc9ed62397e, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ExtraShineAmount: 0
+    - _FresnelAmount: 2
+    - _FresnelEdgePower: 2
+    - _FresnelEdgePowerExtra: 1
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _outlineThickness: 0.92
+    m_Colors:
+    - _Color: {r: 1, g: 0.8901961, b: 0, a: 0}
+    - _FresnelColor: {r: 1, g: 0.7031921, b: 0, a: 0}
+    - _FresnelColorExtra: {r: 1, g: 0.8515253, b: 0, a: 0}
+    - _outlineColor: {r: 1, g: 0.9214483, b: 0, a: 0}
+  m_BuildTextureStacks: []
