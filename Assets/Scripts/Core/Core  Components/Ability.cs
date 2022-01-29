@@ -19,6 +19,7 @@ public class Ability : CoreComponents
     public Vector2 HyperDashPosition { get => _hyperDashPosiiton; set => _hyperDashPosiiton = value; }
     public bool IsPulling { get => _isPulling; set => _isPulling = value; }
     public Text Text { get => _text; set => _text = value; }
+    public bool IsTeleporting { get => _isTeleporting; set => _isTeleporting = value; }
 
     [SerializeField] private bool _hasGodRemnant;
     [SerializeField] private bool _hasObtainedPullShoot;
@@ -39,6 +40,15 @@ public class Ability : CoreComponents
     [SerializeField] private ParticleSystem _smokeTrail;
     [SerializeField] private ParticleSystem _ShockBomb;
     [SerializeField] private ParticleSystem _dustParticle;
+    [SerializeField] private ParticleSystem _teleportParticles;
+    [SerializeField] private ParticleSystem _circleRetract;
+
+    [Header("Shader Effects")]
+    [SerializeField] private Material _teleportMat;
+    [SerializeField] private float _fadeMultiplierDown = 2f;
+    [SerializeField] private float _fadeMultiplierUp = 0.5f;
+    [SerializeField] private bool _isTeleporting;
+    private float _fadeFloatShader = 1;
 
     [Header("DashAfterImage")]
     [SerializeField] Transform _player;
@@ -62,6 +72,7 @@ public class Ability : CoreComponents
     public void Start()
     {
         _dashCameraShake = GetComponentInChildren<CinemachineImpulseSource>();
+        _teleportMat = GetComponentInParent<SpriteRenderer>().material;
     }
 
     public void LogicUpdate()
@@ -88,6 +99,43 @@ public class Ability : CoreComponents
         _hyperDashPosiiton = p_position;
     }
 
+    public void StartHyperDashTeleportShader(float p_fadeController)
+    {
+        _teleportMat.SetFloat("_FadeAmount", p_fadeController);
+    }
+
+    public void PlayHyperDashParticles()
+    {
+        _ShockBomb.Play();
+        _teleportParticles.Play();
+        _circleRetract.Play();
+    }
+    public float FadeControllerDown()
+    {
+        if(_fadeFloatShader > 0)
+        {
+            return _fadeFloatShader -= Time.deltaTime * _fadeMultiplierDown;
+
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    public float FadeControllerUp()
+    {
+        if(_fadeFloatShader < 1)
+        {
+            return _fadeFloatShader += Time.deltaTime * _fadeMultiplierUp;
+
+        }
+        else
+        {
+            _isTeleporting = false;
+            return 1;
+        }
+    }
     
     public void AddToDetected(Collider2D p_collision)
     {

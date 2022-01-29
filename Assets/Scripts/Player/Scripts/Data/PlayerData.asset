@@ -44,3 +44,4 @@ MonoBehaviour:
   HyperDashTime: 1
   ShieldDashTime: 0.5
   ShieldDashVelocity: 30
+  HyperDashWaitTime: 1

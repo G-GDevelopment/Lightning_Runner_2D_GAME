@@ -11,6 +11,8 @@ public class PlayerHyperDashState : PlayerAblilityState
     /// <param name="p_stateMachine"></param>
     /// <param name="p_playerData"></param>
     /// <param name="p_animboolName"></param>
+    /// 
+    private float _fadeAmount = 1;
     public PlayerHyperDashState(Player p_player, PlayerStateMachine p_stateMachine, PlayerData p_playerData, string p_animboolName) : base(p_player, p_stateMachine, p_playerData, p_animboolName)
     {
     }
@@ -27,7 +29,7 @@ public class PlayerHyperDashState : PlayerAblilityState
         if (!isExistingState)
         {
             core.Ability.HyperDashShoot();
-
+            core.Ability.PlayHyperDashParticles();
         }
 
     }
@@ -47,11 +49,19 @@ public class PlayerHyperDashState : PlayerAblilityState
         if (core.Ability.HyperShootHasFoundPosition)
         {
             core.Ability.UseGodRemnant();
-            player.transform.position = core.Ability.HyperDashPosition;
+            core.Ability.StartHyperDashTeleportShader(core.Ability.FadeControllerDown());
 
-            core.Ability.SetFoundPositionToFalse();
 
-            isAbilityDone = true;
+            if(Time.time >= startTime + playerData.HyperDashWaitTime)
+            {
+                player.transform.position = core.Ability.HyperDashPosition;
+
+                core.Ability.IsTeleporting = true;
+                core.Ability.SetFoundPositionToFalse();
+
+                isAbilityDone = true;
+
+            }
         }
         else if (!core.Ability.HyperShootHasFoundPosition && Time.time >= startTime + playerData.HyperDashTime)
         {
@@ -59,4 +69,5 @@ public class PlayerHyperDashState : PlayerAblilityState
             isAbilityDone = true;
         }
     }
+
 }

@@ -101,6 +101,12 @@ public class PlayerInAirState : PlayerState
 
         core.Ability.UpdateText(player.GodAbilityState.CurrentAbility); // Prototyping
 
+        if (core.Ability.IsTeleporting)
+        {
+            core.Ability.StartHyperDashTeleportShader(core.Ability.FadeControllerUp());
+
+        }
+
         if (player.InputHandler.AbilityInput &&  core.Ability.HasObtainedPullShoot)
         {
             stateMachine.ChangeState(player.GodAbilityState);

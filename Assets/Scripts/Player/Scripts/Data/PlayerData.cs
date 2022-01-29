@@ -56,4 +56,5 @@ public class PlayerData : ScriptableObject
     public float HyperDashTime = 0.2f;
     public float ShieldDashTime = 0.5f;
     public float ShieldDashVelocity = 30f;
+    public float HyperDashWaitTime = 0.5f;
 }

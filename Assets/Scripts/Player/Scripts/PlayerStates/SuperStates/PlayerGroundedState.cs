@@ -37,6 +37,7 @@ public class PlayerGroundedState : PlayerState
 
         player.JumpState.ResetAmountOfJumpsLeft();
         player.DashState.ResetCanDash();
+
     }
 
     public override void ExitState()
@@ -60,6 +61,11 @@ public class PlayerGroundedState : PlayerState
         _dashInput = player.InputHandler.DashInput;
         _changeAbilityInput = player.InputHandler.AbilityChangeInput;
         _abilityInput = player.InputHandler.AbilityInput;
+
+        if (core.Ability.IsTeleporting)
+        {
+            core.Ability.StartHyperDashTeleportShader(core.Ability.FadeControllerUp());
+        }
 
         core.Ability.UpdateText(player.GodAbilityState.CurrentAbility); // Prototyping
 
