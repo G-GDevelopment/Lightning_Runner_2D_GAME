@@ -25,9 +25,10 @@ public class PlayerPullState : PlayerAblilityState
         base.EnterState();
         if (core.CollisionSenses.IsTouchingGodRemnants)
         {
+            core.Ability.PlayPullAbilityParticles();
             core.Ability.SetIsPullingToTrue();
             core.Ability.RefillGodRemant();
-
+            
         }
         else
         {

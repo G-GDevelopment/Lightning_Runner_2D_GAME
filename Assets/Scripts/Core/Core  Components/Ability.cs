@@ -42,6 +42,7 @@ public class Ability : CoreComponents
     [SerializeField] private ParticleSystem _dustParticle;
     [SerializeField] private ParticleSystem _teleportParticles;
     [SerializeField] private ParticleSystem _circleRetract;
+    [SerializeField] private ParticleSystem _pullParticle;
 
     [Header("Shader Effects")]
     [SerializeField] private Material _teleportMat;
@@ -121,6 +122,11 @@ public class Ability : CoreComponents
         {
             return 0;
         }
+    }
+
+    public void PlayPullAbilityParticles()
+    {
+        _pullParticle.Play();
     }
 
     public float FadeControllerUp()

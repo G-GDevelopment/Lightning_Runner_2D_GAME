@@ -32,7 +32,7 @@ public class PlayerState
         ChecksForSwitchingState();
         player.Animator.SetBool(_animBoolName, true);
         startTime = Time.time;
-        Debug.Log(_animBoolName);
+        //Debug.Log(_animBoolName);
 
         isAnimationFinished = false;
         isExistingState = false;
