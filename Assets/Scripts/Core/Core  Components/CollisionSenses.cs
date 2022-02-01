@@ -79,9 +79,6 @@ public class CollisionSenses : CoreComponents
     {
         get => Physics2D.OverlapBox(_cellingChecker.position + (Vector3)_boxOffset, _checkingEnemySize, 0f, _godRemnantLayer);
     }
-
-
-
     public Vector2 RaycastNormalValue
     {
         get => (Physics2D.Raycast(_wallChecker.position, Vector2.right * core.Movement.FacingDirection, _wallCheckDistance, _groundLayer)).normal;

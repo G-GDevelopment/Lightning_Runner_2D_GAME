@@ -12,8 +12,9 @@ public class VanguardAbilitySystem : EnemyCoreComponents
     [SerializeField] private bool _playing;
 
     private Queue<Vector2> _targetPositions = new Queue<Vector2>();
-    private Vector3 _nextPosition;
-    private Vector3 _peekPosition;
+    private Vector2 _nextPosition;
+    private Vector2 _peekPosition;
+    private Vector2 _trashPosition;
 
     [SerializeField] private bool _isPatroling;
 
@@ -33,7 +34,7 @@ public class VanguardAbilitySystem : EnemyCoreComponents
         //_nextPosition = _teleportStartPosition.position;
         _nextPosition = _rb.transform.position;
 
-        while(_nextPosition == _rb.transform.position && _targetPositions.Count > 0)
+        while(_nextPosition == (Vector2) _rb.transform.position && _targetPositions.Count > 0)
         {
             //Determine FacingDirection
             _peekPosition = _targetPositions.Peek();
@@ -42,14 +43,22 @@ public class VanguardAbilitySystem : EnemyCoreComponents
                 //Left
                 enemyCore.VanguardMovement.Flip();
             }
-            else
+            else if(_peekPosition.x > transform.position.x && enemyCore.VanguardMovement.FacingDirection != 1)
             {
                 enemyCore.VanguardMovement.Flip();
             }
 
-            _nextPosition = _targetPositions.Dequeue();
+            if(Vector2.Distance(_peekPosition, _target.position) > Vector2.Distance(_nextPosition, _target.position))
+            {
+                _trashPosition = _targetPositions.Dequeue();
+            }
+            else
+            {
+                _nextPosition = _targetPositions.Dequeue();
+
+            }
         }
 
-        _rb.transform.position = Vector3.MoveTowards(transform.position, _nextPosition, p_chaseSpeed * Time.deltaTime);
+        _rb.transform.position = Vector3.MoveTowards(_rb.transform.position, new Vector3(_nextPosition.x, _nextPosition.y, 0), p_chaseSpeed * Time.deltaTime);
     }
 }

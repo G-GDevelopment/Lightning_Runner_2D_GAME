@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Vanguard : MonoBehaviour
+public class Vanguard : MonoBehaviour, IDamageable
 {
     #region Variables Concerning States
     public VanguardStateMachine StateMachine { get; private set; }
@@ -66,6 +66,22 @@ public class Vanguard : MonoBehaviour
 
     #region Enemy Methods
 
+    public void Damage(float amount)
+    {
+        Debug.Log("Vanguard Just Died");
+    }
+
+    public void Dashed(bool isDashed)
+    {
+        Debug.Log("Vanguard Just Died");
+    }
+
+    public void Pulled(bool isPulled)
+    {
+        //Do Nothing here
+    }
+
+
     #endregion
 
     #region DrawGizmos
@@ -86,6 +102,5 @@ public class Vanguard : MonoBehaviour
 
         }
     }
-
     #endregion
 }

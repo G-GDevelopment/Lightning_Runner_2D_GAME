@@ -8,3 +8,7 @@ public interface IDamageable
     void Dashed(bool isDashed);
     void Pulled(bool isPulled);
 }
+public interface IWorld
+{
+    void ElectricWater(bool isElectric);
+}

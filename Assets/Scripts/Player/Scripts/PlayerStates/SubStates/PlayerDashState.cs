@@ -22,6 +22,7 @@ public class PlayerDashState : PlayerAblilityState
     public override void EnterState()
     {
         base.EnterState();
+        core.Ability.SetIsDashingToTrue();
         CanDash = false;
         _hasTouchedWater = false;
         player.InputHandler.SetDashInputToFalse();
@@ -58,7 +59,7 @@ public class PlayerDashState : PlayerAblilityState
     public override void ExitState()
     {
         base.ExitState();
-
+        core.Ability.SetIsDashingToFalse();
         core.Movement.SetVelocity(playerData.DashEndYMultiplier , core.Movement.CurrentVelocity);
 
         if(core.Movement.CurrentVelocity.y > 0)
@@ -81,8 +82,6 @@ public class PlayerDashState : PlayerAblilityState
         _inputX = player.InputHandler.NormalizeInputX;
         _dashInput = player.InputHandler.DashInput;
         _dashInputStop = player.InputHandler.DashInputStop;
-
-        Debug.Log(_dashDirectionInput.y);
         player.Animator.SetFloat("YVelocity", _dashDirectionInput.y);
 
         player.Rigidbody.drag = playerData.Drag;

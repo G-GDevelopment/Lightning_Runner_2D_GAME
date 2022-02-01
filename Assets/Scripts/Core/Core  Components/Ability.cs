@@ -14,12 +14,18 @@ public class Ability : CoreComponents
     public bool HasObtainedShieldDash { get => _hasObtainedShieldDash; set => _hasObtainedShieldDash = value; }
     public bool HyperShootHasFoundPosition { get => _hyperShootHasFoundPosition; set => _hyperShootHasFoundPosition = value; }
     public bool IsShieldDashing { get => _isShieldDashing; set => _isShieldDashing = value; }
-    public Transform ShootPullPoint { get => _shootPullPoint; set => _shootPullPoint = value; }
-    public List<IDamageable> DetectedDamageable { get => _detectedDamageable; set => _detectedDamageable = value; }
-    public Vector2 HyperDashPosition { get => _hyperDashPosiiton; set => _hyperDashPosiiton = value; }
     public bool IsPulling { get => _isPulling; set => _isPulling = value; }
-    public Text Text { get => _text; set => _text = value; }
     public bool IsTeleporting { get => _isTeleporting; set => _isTeleporting = value; }
+    public bool IsDashing { get => _isDashing; set => _isDashing = value; }
+
+    public Transform ShootPullPoint { get => _shootPullPoint; set => _shootPullPoint = value; }
+
+    public List<IDamageable> DetectedDamageable { get => _detectedDamageable; set => _detectedDamageable = value; }
+    public List<IWorld> DetectedWorldEffects { get => _detectedWorldEffects; set => _detectedWorldEffects = value; }
+
+    public Vector2 HyperDashPosition { get => _hyperDashPosiiton; set => _hyperDashPosiiton = value; }
+
+    public Text Text { get => _text; set => _text = value; }
 
     [SerializeField] private bool _hasGodRemnant;
     [SerializeField] private bool _hasObtainedPullShoot;
@@ -28,6 +34,7 @@ public class Ability : CoreComponents
     [SerializeField] private bool _hyperShootHasFoundPosition;
     [SerializeField] private bool _isShieldDashing;
     [SerializeField] private bool _isPulling;
+    [SerializeField] private bool _isDashing;
 
     [SerializeField] private Transform _shootPullPoint;
     [SerializeField] private GameObject _shootPrefab;
@@ -66,6 +73,7 @@ public class Ability : CoreComponents
     [SerializeField] private Text _text;
 
     private List<IDamageable> _detectedDamageable = new List<IDamageable>();
+    private List<IWorld> _detectedWorldEffects = new List<IWorld>();
 
     public void RefillGodRemant() => _hasGodRemnant = true;
     public void UseGodRemnant() => _hasGodRemnant = false;
@@ -79,6 +87,7 @@ public class Ability : CoreComponents
     public void LogicUpdate()
     {
         CheckForDamage();
+        CheckForWorldEffects();
     }
     public void Shoot()
     {
@@ -147,11 +156,17 @@ public class Ability : CoreComponents
     {
         //Debug.Log("AddedToDetected");
         IDamageable damageable = p_collision.GetComponent<IDamageable>();
+        IWorld worldEffects = p_collision.GetComponent<IWorld>();
 
         if (damageable != null)
         {
             //Debug.Log("Added");
             _detectedDamageable.Add(damageable);
+        }
+
+        if(worldEffects != null)
+        {
+            _detectedWorldEffects.Add(worldEffects);
         }
     }
 
@@ -159,11 +174,17 @@ public class Ability : CoreComponents
     {
         //Debug.Log("RemoveFromDetected");
         IDamageable damageable = p_collision.GetComponent<IDamageable>();
+        IWorld worldEffects = p_collision.GetComponent<IWorld>();
 
         if (damageable != null)
         {
             //Debug.Log("Removed");
             _detectedDamageable.Remove(damageable);
+        }
+
+        if (worldEffects != null)
+        {
+            _detectedWorldEffects.Remove(worldEffects);
         }
     }
 
@@ -174,6 +195,18 @@ public class Ability : CoreComponents
             item.Damage(1f);
             item.Pulled(_isPulling);
             item.Dashed(_isShieldDashing);
+        }
+    }
+
+    private void CheckForWorldEffects()
+    {
+        foreach (IWorld item in _detectedWorldEffects.ToList())
+        {
+            if(_isDashing || _isShieldDashing)
+            {
+                item.ElectricWater(true);
+
+            }
         }
     }
 
@@ -199,7 +232,7 @@ public class Ability : CoreComponents
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (_isShieldDashing)
+        if (_isShieldDashing || _isDashing)
         {
             core.Ability.AddToDetected(collision);
         }
@@ -275,4 +308,7 @@ public class Ability : CoreComponents
         current.GetComponent<SpriteRenderer>().material.DOKill();
         current.GetComponent<SpriteRenderer>().material.DOColor(fadeColor, fadeTime);
     }
+
+    public void SetIsDashingToTrue() => _isDashing = true;
+    public void SetIsDashingToFalse() => _isDashing = false;
 }

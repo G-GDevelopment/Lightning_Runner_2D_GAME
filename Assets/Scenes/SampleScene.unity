@@ -10409,6 +10409,7 @@ MonoBehaviour:
   _hyperShootHasFoundPosition: 0
   _isShieldDashing: 0
   _isPulling: 0
+  _isDashing: 0
   _shootPullPoint: {fileID: 1197431438}
   _shootPrefab: {fileID: 1550285879592653803, guid: e0d90f7b5ea6fb646bb68545e1fcfcf8, type: 3}
   _shootPrefabHyperDash: {fileID: 1550285879592653803, guid: e7bd73b4d3f123647aeb9be5850a954f, type: 3}
@@ -10457,7 +10458,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.0001, y: 0.0001}
+  m_Size: {x: 0.3, y: 0.8}
   m_EdgeRadius: 0
 --- !u!1 &612262971
 GameObject:
@@ -41116,7 +41117,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716926913}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -41438,13 +41439,14 @@ GameObject:
   - component: {fileID: 1948786490}
   - component: {fileID: 1948786489}
   - component: {fileID: 1948786488}
+  - component: {fileID: 1948786491}
   m_Layer: 4
   m_Name: Tilemap_Obstacles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1948786487
 Transform:
   m_ObjectHideFlags: 0
@@ -42005,6 +42007,21 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1948786491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948786486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96bfcd5a0d5f729478e2c67491bd1b30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _waterIsEletric: 0
+  _enemyVanguardLayer: 7
+  _godRemnant: 9
 --- !u!1 &1987708299
 GameObject:
   m_ObjectHideFlags: 0

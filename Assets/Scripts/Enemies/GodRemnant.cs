@@ -140,5 +140,6 @@ public class GodRemnant : MonoBehaviour, IDamageable
         return Vector2.Distance(transform.position, _target.transform.position) < _activeDistance;
     }
 
+
     //Void Atack Pattern
 }
