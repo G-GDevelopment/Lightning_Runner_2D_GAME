@@ -33,8 +33,11 @@ public class CollisionSenses : CoreComponents
     [SerializeField] private Vector2 _overlapSize;
 
     [SerializeField] private LayerMask _groundLayer;
+    [SerializeField] private LayerMask _groundNonClimbLayer;
+    [SerializeField] private LayerMask _allGroundLayer; //<- Bit value 2112 or bitshift (6 << 6) |  (6 << 11)
     [SerializeField] private LayerMask _waterLayer;
     [SerializeField] private LayerMask _godRemnantLayer;
+    [SerializeField] private LayerMask _itemLayer;
 
 
 
@@ -52,7 +55,7 @@ public class CollisionSenses : CoreComponents
     }
     public bool IsGrounded
     {
-        get => Physics2D.OverlapCircle(_groundChecker.position, _groundCheckRadius, _groundLayer);
+        get => Physics2D.OverlapCircle(_groundChecker.position, _groundCheckRadius, _allGroundLayer);
 
     }
 
@@ -86,6 +89,11 @@ public class CollisionSenses : CoreComponents
     public Vector2 RaycastNormalGroundValue
     {
         get => (Physics2D.Raycast(_wallChecker.position, Vector2.down, _wallCheckDistance, _groundLayer)).normal;
+    }
+
+    public Collider2D ItemChecker
+    {
+        get => Physics2D.OverlapBox(_cellingChecker.position, _overlapSize, 0f, _itemLayer);
     }
 
     #endregion

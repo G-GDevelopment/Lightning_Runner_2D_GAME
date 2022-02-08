@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IDamageable
 {
     #region Variables Concerning States
     public PlayerStateMachine StateMachine { get; private set; }
@@ -114,6 +114,21 @@ public class Player : MonoBehaviour
 
     private void AnimationFinishedTrigger() => StateMachine.CurrentState.AnimationFinishedTrigger();
 
+
+    public void Damage(float amount)
+    {
+        Debug.Log("Player Lost a Life");
+    }
+
+    public void Dashed(bool isDashed)
+    {
+        //Do Nothing
+    }
+
+    public void Pulled(bool isPulled)
+    {
+        //Do Nothing Here
+    }
 
     #endregion
 
