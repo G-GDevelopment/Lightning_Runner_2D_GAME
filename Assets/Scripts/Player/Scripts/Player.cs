@@ -41,6 +41,7 @@ public class Player : MonoBehaviour, IDamageable
     #region Variables
     private Vector2 _playerVelocity;
 
+    private bool _invicible = false;
     [SerializeField] private bool _debugGizmos = false;
     #endregion
 
@@ -130,6 +131,32 @@ public class Player : MonoBehaviour, IDamageable
         //Do Nothing Here
     }
 
+    public void PlayerDied()
+    {
+        if(Core.Ability.Health < 1)
+        {
+            Debug.Log("Player Dead");
+
+            //Restart Level
+        }
+    }
+
+    public void PlayerLostALife()
+    {
+        if (!_invicible)
+        {
+            Core.Ability.Health--;
+            StartCoroutine(InvulnerabilityTime(Core.Ability.InvicibilityTime));
+            //Slow Down Time or velocity
+        }
+    }
+
+    private IEnumerator InvulnerabilityTime(float p_time)
+    {
+        _invicible = true;
+        yield return new WaitForSeconds(p_time);
+        _invicible = false;
+    }
     #endregion
 
     #region DrawGizmos

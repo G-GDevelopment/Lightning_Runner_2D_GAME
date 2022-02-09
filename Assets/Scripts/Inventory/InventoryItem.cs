@@ -6,8 +6,9 @@ using UnityEngine;
 public class InventoryItem
 {
     [SerializeField] private InventoryItemData _data;
-    public int StackSize { get; private set; }
+    [SerializeField] private int _stackSize;
     public InventoryItemData Data { get => _data; set => _data = value; }
+    public int StackSize { get => _stackSize; set => _stackSize = value; }
 
     public InventoryItem(InventoryItemData data)
     {
@@ -17,11 +18,11 @@ public class InventoryItem
 
     public void AddToStack()
     {
-        StackSize++;
+        _stackSize++;
     }
 
     public void RemoveFromStack()
     {
-        StackSize--;
+        _stackSize--;
     }
 }

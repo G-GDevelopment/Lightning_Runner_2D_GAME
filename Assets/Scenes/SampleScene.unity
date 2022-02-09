@@ -10726,6 +10726,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 631b89c9715da374e89aa2ea9b7fb36f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _health: 0
+  _invicibilityTime: 0
   _hasGodRemnant: 1
   _hasObtainedPullShoot: 1
   _hasObtainedHyperDash: 1
@@ -11259,7 +11261,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 780542121}
-  - component: {fileID: 780542122}
   - component: {fileID: 780542123}
   m_Layer: 3
   m_Name: Inventory
@@ -11283,19 +11284,6 @@ Transform:
   m_Father: {fileID: 1131076572}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &780542122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 780542120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63249ca8ac0eaae46b9a7b2340ba4668, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _inventory: []
 --- !u!114 &780542123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11308,6 +11296,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b9bfcd30f43cd0409ab3d207489ebb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _coins: 0
+  _extraLife: 0
+  _godRemnants: 0
+  _inventory: []
   _itemLayer:
     serializedVersion: 2
     m_Bits: 4096

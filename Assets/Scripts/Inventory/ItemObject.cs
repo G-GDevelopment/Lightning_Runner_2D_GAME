@@ -8,7 +8,7 @@ public class ItemObject : MonoBehaviour
 
     public void OnHandlePickupItem()
     {
-        InventorySystem.instance.Add(itemReference);
+        Inventory.instance.Add(itemReference);
         Destroy(gameObject);
     }
 }

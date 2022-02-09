@@ -8,6 +8,10 @@ using DG.Tweening;
 
 public class Ability : CoreComponents
 {
+    public int Health { get => _health; set => _health = value; }
+    public float InvicibilityTime { get => _invicibilityTime; set => _invicibilityTime = value; }
+
+
     public bool HasGodRemnant { get => _hasGodRemnant; set => _hasGodRemnant = value; }
     public bool HasObtainedPullShoot { get => _hasObtainedPullShoot; set => _hasObtainedPullShoot = value; }
     public bool HasObtainedHyperDash { get => _hasObtainedHyperDash; set => _hasObtainedHyperDash = value; }
@@ -27,6 +31,11 @@ public class Ability : CoreComponents
 
     public Text Text { get => _text; set => _text = value; }
 
+    [Header("Player Stats")]
+    [SerializeField] private int _health;
+    [SerializeField] private float _invicibilityTime;
+
+    [Space]
     [SerializeField] private bool _hasGodRemnant;
     [SerializeField] private bool _hasObtainedPullShoot;
     [SerializeField] private bool _hasObtainedHyperDash;
